@@ -44,7 +44,7 @@ class Day5Test {
     @DisplayName("Day 5 - Part 2")
     void testPart2(){
         final int result = Day5.executePart2(BOARDING_PASSES);
-        assertEquals(922, result);
+        assertEquals(747, result);
     }
 
 }
