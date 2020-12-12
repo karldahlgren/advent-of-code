@@ -22,29 +22,29 @@
  * THE SOFTWARE.
  */
 
-package io.dahlgren.advent;
+package info.dahlgren.advent;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Day2Test {
+public class Day4Test {
 
-    private static final String[] PASSWORDS = Utility.parseFile("Day2.txt");
+    private static final String[] PASSPORTS = Utility.parseFile("Day4.txt");
 
     @Test
-    @DisplayName("Day 2 - Part 1")
+    @DisplayName("Day 4 - Part 1")
     void testPart1(){
-        final long result = Day2.executePar1(PASSWORDS);
-        assertEquals(447, result);
+        final int result = Day4.executePart1(PASSPORTS);
+        assertEquals(192, result);
     }
 
     @Test
-    @DisplayName("Day 2 - Part 2")
+    @DisplayName("Day 4 - Part 2")
     void testPart2(){
-        final long result = Day2.executePar2(PASSWORDS);
-        assertEquals(249, result);
+        final int result = Day4.executePart2(PASSPORTS);
+        assertEquals(101, result);
     }
 
 }

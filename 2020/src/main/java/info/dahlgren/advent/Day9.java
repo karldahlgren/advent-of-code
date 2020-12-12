@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package io.dahlgren.advent;
+package info.dahlgren.advent;
 
 import java.util.HashSet;
 import java.util.Set;

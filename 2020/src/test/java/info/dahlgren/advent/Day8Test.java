@@ -22,34 +22,29 @@
  * THE SOFTWARE.
  */
 
-package io.dahlgren.advent;
+package info.dahlgren.advent;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Day3Test {
+public class Day8Test {
 
-    private static final String[] TERRAIN = Utility.parseFile("Day3.txt");
+    private static final String[] INSTRUCTIONS = Utility.parseFile("Day8.txt");
 
     @Test
-    @DisplayName("Day 3 - Part 1")
+    @DisplayName("Day 8 - Part 1")
     void testPart1(){
-        final long result = Day3.execute(TERRAIN, 1, 3);
-        assertEquals(242, result);
+        final int result = Day8.executePart1(INSTRUCTIONS);
+        assertEquals(1949, result);
     }
 
     @Test
-    @DisplayName("Day 3 - Part 2")
+    @DisplayName("Day 8 - Part 2")
     void testPart2(){
-        final long sum1 = Day3.execute(TERRAIN, 1, 1);
-        final long sum2 = Day3.execute(TERRAIN, 1, 3);
-        final long sum3 = Day3.execute(TERRAIN, 1, 5);
-        final long sum4 = Day3.execute(TERRAIN, 1, 7);
-        final long sum5 = Day3.execute(TERRAIN, 2, 1);
-
-        assertEquals(2265549792L, sum1 * sum2 * sum3 * sum4 * sum5);
+        final int result = Day8.executePart2(INSTRUCTIONS);
+        assertEquals(2092, result);
     }
-
+    
 }

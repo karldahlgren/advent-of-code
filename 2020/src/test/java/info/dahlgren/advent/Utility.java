@@ -22,28 +22,35 @@
  * THE SOFTWARE.
  */
 
-package io.dahlgren.advent;
+package info.dahlgren.advent;
 
-public class Day3 {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
-    private static final char TREE = '#';
+public final class Utility {
 
-    private Day3() {
+    private Utility() {
 
     }
 
-    public static int execute(final String[] terrain, final int rowInc, final int columnInc) {
-        int column = 0;
-        int treeCount = 0;
-        for(int row = 0; row < terrain.length; row += rowInc){
-            if(terrain[row].charAt(column % terrain[row].length()) == TREE){
-                treeCount++;
+    public static String[] parseFile(final String file){
+        try(FileReader fileReader = new FileReader("src/test/resources/" + file)) {
+            try(BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+                final List<String> lines = new LinkedList<>();
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    lines.add(line);
+                }
+
+                return lines.toArray(new String[0]);
             }
-
-            column += columnInc;
+        } catch(IOException e) {
+            throw new IllegalStateException("Unable to parse file: " + file);
         }
-
-        return treeCount;
     }
+
 
 }

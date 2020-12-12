@@ -22,29 +22,33 @@
  * THE SOFTWARE.
  */
 
-package io.dahlgren.advent;
+package info.dahlgren.advent;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Day12Test {
+class Day10Test {
 
-    private static final String[] INSTRUCTIONS = Utility.parseFile("Day12.txt");
+    private static final int[] ADAPTERS = Arrays.stream(Utility.parseFile("Day10.txt"))
+            .mapToInt(Integer::parseInt)
+            .toArray();
 
     @Test
-    @DisplayName("Day 12 - Part 1")
+    @DisplayName("Day 10 - Part 1")
     void testPart1(){
-        final int result = Day12.executePart1(INSTRUCTIONS);
-        assertEquals(439, result);
+        final int result = Day10.executePart1(ADAPTERS);
+        assertEquals(2232, result);
     }
 
     @Test
-    @DisplayName("Day 12 - Part 2")
+    @DisplayName("Day 10 - Part 2")
     void testPart2(){
-        final int result = Day12.executePart2(INSTRUCTIONS);
-        assertEquals(12385, result);
+        final long result = Day10.executePart2(ADAPTERS);
+        assertEquals(173625106649344L, result);
     }
 
 }
